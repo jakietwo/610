@@ -1,0 +1,2 @@
+webpackJsonp([1],{JzhA:function(e,n){},hXAX:function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var a={render:function(){var e=this.$createElement;return(this._self._c||e)("div",[this._v("\n  我是老王\n")])},staticRenderFns:[]};var r=t("VU/8")({name:"laowang"},a,!1,function(e){t("JzhA")},"data-v-a9a268fc",null);n.default=r.exports}});
+//# sourceMappingURL=1.5cfc86c9e9cd0e511042.js.map

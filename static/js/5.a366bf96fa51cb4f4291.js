@@ -1,0 +1,2 @@
+webpackJsonp([5],{mBwW:function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var r={render:function(){var e=this.$createElement;return(this._self._c||e)("div",[this._v("\n  我是苏B\n")])},staticRenderFns:[]};var u=t("VU/8")({name:"su-b"},r,!1,function(e){t("uRoc")},"data-v-4e20e0b6",null);n.default=u.exports},uRoc:function(e,n){}});
+//# sourceMappingURL=5.a366bf96fa51cb4f4291.js.map

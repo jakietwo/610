@@ -1,0 +1,2 @@
+webpackJsonp([6],{"0ome":function(e,t){},EGEM:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var a={render:function(){var e=this.$createElement;return(this._self._c||e)("div",[this._v("610宿舍")])},staticRenderFns:[]};var r=n("VU/8")({name:"sixone"},a,!1,function(e){n("0ome")},"data-v-194aa59d",null);t.default=r.exports}});
+//# sourceMappingURL=6.6cfd4d02dac18939fa14.js.map

@@ -1,0 +1,2 @@
+webpackJsonp([2],{"78lu":function(e,n){},Atno:function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var a={render:function(){var e=this.$createElement;return(this._self._c||e)("div",[this._v("\n  我是佳归\n")])},staticRenderFns:[]};var i=t("VU/8")({name:"jiagui"},a,!1,function(e){t("78lu")},"data-v-933ea7e6",null);n.default=i.exports}});
+//# sourceMappingURL=2.61dcad54f3b68861ec3c.js.map
