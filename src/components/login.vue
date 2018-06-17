@@ -54,7 +54,7 @@
     text-align center
     padding-top 40%
     background-color rgb(250, 250, 250)
-    background-image url("./../common/image/bg.jpg")
+    background-image url("@/common/image/bg.jpg")
     background-size 375px 700px
     background-repeat no-repeat
     .loginForm
