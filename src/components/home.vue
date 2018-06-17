@@ -1,42 +1,40 @@
 <template>
   <div class="hello">
     <div>
-      <audio  id="audio"  style="display: none" autoplay="autoplay" controls autobuffer >
-        <source src="@/common/music/2.mp3"/>
+      <audio id="audio" style="display: none;height: 0" autoplay="autoplay" controls autobuffer>
+        <source id="audioSource" src="@/common/music/2.mp3"/>
       </audio>
-      <mu-slide-left-transition>
+      <mu-fade-transition>
         <keep-alive>
           <router-view></router-view>
         </keep-alive>
-      </mu-slide-left-transition>
+      </mu-fade-transition>
 
 
       <div class="tab">
         <router-link tag="div" class="tab-item" to="/home/sixone">
-          <i class="iconfont icon-home"></i><span class="tab-link">610宿舍</span>
+          <i class="iconfont icon-home"></i><span class="tab-link"> 610宿舍</span>
         </router-link>
-
-
         <router-link tag="div" class="tab-item" to="/home/diaobao">
-          <i class="iconfont icon-mappin"></i><span class="tab-link">碉堡</span>
+          <i class="iconfont icon-boy2" style="font-size: 28px"></i><span class="tab-link">碉堡</span>
 
         </router-link>
 
 
         <router-link tag="div" class="tab-item" to="/home/sub">
-          <i class="iconfont icon-airplane"></i><span class="tab-link">苏B</span>
+          <i class="iconfont icon-boy1" style="font-size: 28px"></i><span class="tab-link">苏B</span>
 
         </router-link>
 
 
         <router-link tag="div" class="tab-item" to="/home/laowang">
-          <i class="iconfont icon-report"></i><span class="tab-link">老王</span>
+          <i class="iconfont icon-boy"></i><span class="tab-link">老王</span>
 
         </router-link>
 
 
         <router-link tag="div" class="tab-item" to="/home/jiagui">
-          <i class="iconfont icon-user1-copy"></i><span class="tab-link">佳归</span>
+          <i class="iconfont icon-boy3"></i><span class="tab-link">佳归</span>
 
         </router-link>
 
@@ -46,28 +44,57 @@
 </template>
 
 <script>
+  import BScroll from 'better-scroll'
+  import music1 from '@/common/music/may1.mp3'
+  import music2 from '@/common/music/3.mp3'
+  import music3 from '@/common/music/may2.mp3'
+  import music5 from '@/common/music/5.mp3'
+  import music6 from '@/common/music/6.mp3'
   export default {
     name: 'HelloWorld',
     data() {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        msg: '',
+        currenList: 0,
+        songList: [
+          music1,
+          music2
+        ]
       }
     },
-    methods: {
-      changeSong() {
-          console.log('结束第一首!');
-      },
-      playing() {
-        console.log('播放中');
-      }
+    components: {
+      music1,
+      music2
     },
-    mounted(){
+    methods: {},
+    mounted() {
+      let vm = this;
       let audio = document.getElementById('audio');
-      audio.addEventListener('play',function () {
+      audio.addEventListener('play', function () {
         console.log('播放ing');
       });
-      audio.addEventListener('ended',function () {
-        console.log('结束了');
+      audio.addEventListener('ended', function () {
+        let audioSource = document.getElementById('audioSource');
+        if (vm.currenList ===  0 ){
+          audioSource.src = music1;
+          console.log(vm.currenList);
+        }else if (vm.currenList === 1){
+          audioSource.src = music2;
+          console.log(vm.currenList+'000');
+        }else if(vm.currenList === 2){
+           audioSource.src = music3;
+        }else if (vm.currenList === 3){
+            audioSource.src = music5;
+        }else if (vm.currenList === 4){
+          audioSource.src = music6;
+        }
+        else {
+          audioSource.src = music1;
+          vm.currenList = -1;
+        }
+        vm.currenList ++ ;
+        audio.load();
+        audio.play();
       })
     }
   }
@@ -82,15 +109,15 @@
     bottom: 0
     width: 100%
     text-align: center
-    height: 100px
-    line-height: 100px
+    height: 50px
+    line-height: 50px
     font-size: $font-size-small-s
-    z-index: 50
+    z-index: 100
     background-color $color-background-tab
-    box-shadow: 2px 2px 2px
+    border-top 1px solid rgb(240, 240, 240)
     .tab-item
       flex: 1
-      height 100px
+      height 50px
       display flex
       justify-items center
       align-items center
@@ -104,13 +131,17 @@
           color $color-tab-link
       .iconfont
         position absolute
-        height 100px
-        bottom 16px
-        font-size: $size-iconfont-m
+        height 50px
+        bottom 10px
+        font-size 24px
+      .icon-boy1
+        bottom 8px
+      .icon-boy
+        bottom 12px
       .tab-link
         position: absolute;
         line-height: 100px;
-        bottom: -30px;
+        bottom: -40px;
         padding: 0;
         font-size $font-size-small
       .badge

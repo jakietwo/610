@@ -10,7 +10,7 @@
       <mu-text-field v-model="value2" label="Password" label-float icon="locked"></mu-text-field>
       <br/>
     </mu-container>
-    <mu-button round color="success" @click="login"> 点我登录</mu-button>
+    <mu-button round class="btn" color="success" @click="login"> 点我登录</mu-button>
   </div>
 </template>
 
@@ -54,7 +54,12 @@
     text-align center
     padding-top 40%
     background-color rgb(250, 250, 250)
+    background-image url("./../common/image/bg.jpg")
+    background-size 375px 700px
+    background-repeat no-repeat
     .loginForm
       margin 0 auto
-      font-size 32px
+      font-size 16px
+    .btn
+      width 100px
 </style>

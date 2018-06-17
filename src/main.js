@@ -8,8 +8,10 @@ import './common/icon/iconfont.css'
 import MuseUi from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
 
+
 Vue.config.productionTip = false
 Vue.use(MuseUi);
+
 router.beforeEach((to,from,next)=>{
   console.log(to.name);
   if(!localStorage.getItem('user')&& (to.name!='login')){
@@ -25,4 +27,4 @@ new Vue({
   router,
   components: { App },
   template: '<App/>'
-})
+});
